@@ -1,0 +1,20 @@
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  td,
+  th {
+    padding: 0;
+  }
+    .table {
+      border-collapse: collapse !important;
+    }
+    .table td,
+    .table th {
+      background-color: #fff !important;
+    }
+    .table-bordered th,
+    .table-bordered td {
+      border: 1px solid #ddd !important;
+    }
+  

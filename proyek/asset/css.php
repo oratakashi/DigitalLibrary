@@ -6,6 +6,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } 
 </script>
+<link rel="stylesheet" type="text/css" href="css/table-style.css" />
+<link rel="stylesheet" type="text/css" href="css/basictable.css" />
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/component.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/export.css" rel="stylesheet" type="text/css" media="all" />

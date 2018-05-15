@@ -36,6 +36,7 @@ class Login {
                             }else{
                                 session_start(); // turn the session on
                                 $_SESSION['username'] = $username; // use username as the session
+                                $_SESSION['nama'] = $data['nama'];
                                 header('Location: member.php');
                             }
                         }
@@ -57,6 +58,7 @@ class Login {
                                 }else{
                                     session_start(); // turn the session on
                                     $_SESSION['username'] = $username; // use username as the session
+                                    $_SESSION['nama'] = $data['nama'];
                                     header('Location: member.php');
                                 }
                             }
@@ -78,6 +80,7 @@ class Login {
                                     }else{
                                         session_start(); // turn the session on
                                         $_SESSION['username'] = $username; // use username as the session
+                                        $_SESSION['nama'] = $data['nama'];
                                         header('Location: member.php');
                                     }
                                 }

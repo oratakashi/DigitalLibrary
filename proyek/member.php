@@ -24,10 +24,10 @@
 					include 'asset/content/main-content.php';
 				}
 				if($_GET['page']=="kategori"){
-					include 'asset/content/kategori-buku.php';
+					include 'asset/content/kategori-user.php';
 				}
-				if($_GET['page']=="login"){
-					include 'asset/sessions/login.php';
+				if($_GET['page']=="daftarbuku"){
+					include 'asset/content/daftar-buku.php';
 				}
 		?>
 </div>

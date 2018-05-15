@@ -12,20 +12,26 @@
 				<div class="deals"> 
 		<div class="container"> 
 			<div class="deals-row">
-				<div class="col-md-4 focus-grid"> 
+                <div class="col-md-3 focus-grid"> 
+					<a href="index.php?page=komputer" class="wthree-btn wthree4"> 
+						<div class="focus-image"><i class="fa fa-gift"></i></div>
+						<h4 class="clrchg">Tugas Akhir</h4> 
+					</a>
+				</div>
+				<div class="col-md-3 focus-grid"> 
 					<a href="index.php?page=komputer" class="wthree-btn"> 
 						<div class="focus-image"><i class="fa fa-laptop"></i></div>
 						<h4 class="clrchg">Ilmu Komputer</h4> 
 					</a>
 				</div>
-				<div class="col-md-4 focus-grid"> 
+				<div class="col-md-3 focus-grid"> 
 					<a href="index.php?page=mesin" class="wthree-btn wthree1"> 
 						<div class="focus-image"><i class="fa fa-cogs"></i></div>
 						<h4 class="clrchg">Otomotif & Mesin</h4> 
 					</a>
 				</div> 
 				
-				<div class="col-md-4 focus-grid"> 
+				<div class="col-md-3 focus-grid"> 
 					<a href="index.php?page=kimia" class="wthree-btn wthree3"> 
 						<div class="focus-image"><i class="fa fa-flask"></i></div>
 						<h4 class="clrchg">Kimia Industri</h4>

@@ -13,14 +13,16 @@ class masukan {
                 $pengarang = $_POST['pengarang'];
                 $penerbit = $_POST['penerbit'];
                 $kategori = $_POST['kategori'];
-                $sql = "insert into tb_buku values (:kd_buku, :judul, :pengarang, :penerbit, :kategori)";
+                $sinopsis = $_POST['sinopsis'];
+                $sql = "insert into tb_buku values (:kd_buku, :judul, :pengarang, :penerbit, :kategori, :sinopsis)";
                     $query= $conn->prepare($sql);
                     $dataBuku = array(
                         ':kd_buku' => $kd_buku,
                         ':judul'=> $judul,
                         ':pengarang' => $pengarang,
                         ':penerbit' => $penerbit,
-                        ':kategori' => $kategori                        
+                        ':kategori' => $kategori,
+                        ':sinopsis' => $sinopsis                       
                     );
                     $query->bindValue( ":kd_buku", $kd_buku, PDO::PARAM_INT );
                     $query->execute($dataBuku);

@@ -13,50 +13,28 @@
 								<div class="blank_w3ls_agile">
 									<div class="blank-page agile_info_shadow">
 										<div class="row">
-											<div class="col-sm-6 col-md-3">
-												<div class="thumbnail">
-													<a  href="">
-														<img src="images/park.jpg" alt="Park">
-													</a>
-													<div class="caption">
-														<center><h3>Thumbnail label</h3></center><br>
-														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+											<?php
+												// Mendapatkan Data Tabel
+												require_once ("koneksi.php");
+												$connection = new ConnectionDB();
+												$conn = $connection->getConnection();
+												$sql 	= 'SELECT * FROM tb_buku ORDER BY judul ASC';
+												$result = $conn->prepare($sql);
+												$result->execute();
+												foreach($result as $row){ 
+											?>				
+												<div class="col-sm-6 col-md-3">
+													<div class="thumbnail">
+														<a  href="detailbuku.php?id=<?php echo $row['kode_buku'] ?>">
+															<img src="images/park.jpg" alt="Park">
+														</a>
+														<div class="caption">
+															<center><h3 style="font-size:20px"><?php echo $row['judul']?></h3></center><br>
+															<p style="font-size:12px"><?php echo $row['sinopsis'] ?></p>
+														</div>
 													</div>
 												</div>
-											</div>
-											<div class="col-sm-6 col-md-3">
-												<div class="thumbnail">
-													<a  href="index.php?page=produk">
-														<img src="images/park.jpg" alt="Park">
-													</a>
-													<div class="caption">
-														<center><h3>Thumbnail label</h3></center><br>
-														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-													</div>
-												</div>
-											</div>
-											<div class="col-sm-6 col-md-3">
-												<div class="thumbnail">
-													<a  href="">
-														<img src="images/park.jpg" alt="Park">
-													</a>
-													<div class="caption">
-														<center><h3>Thumbnail label</h3></center><br>
-														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-													</div>
-												</div>
-											</div>
-											<div class="col-sm-6 col-md-3">
-												<div class="thumbnail">
-													<a  href="">
-														<img src="images/park.jpg" alt="Park">
-													</a>
-													<div class="caption">
-														<center><h3>Thumbnail label</h3></center><br>
-														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-													</div>
-												</div>
-											</div>
+												<?php } ?>
 										</div>
 									</div>
 								</div>
@@ -72,50 +50,27 @@
 								<div class="blank_w3ls_agile">
 									<div class="blank-page agile_info_shadow">
 										<div class="row">
-										<div class="col-sm-6 col-md-3">
-												<div class="thumbnail">
-													<a  href="">
-														<img src="images/park.jpg" alt="Park">
-													</a>
-													<div class="caption">
-														<center><h3>Thumbnail label</h3></center><br>
-														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+										<?php 
+										require_once ("koneksi.php");
+										$connection = new ConnectionDB();
+										$conn = $connection->getConnection();
+										$sql 	= 'SELECT * FROM tb_buku ORDER BY judul ASC';
+										$result = $conn->prepare($sql);
+										$result->execute();
+										foreach($result as $row){ 
+											?>				
+												<div class="col-sm-6 col-md-3">
+													<div class="thumbnail">
+														<a  href="detailbuku.php?id=<?php echo $row['kode_buku'] ?>">
+															<img src="images/park.jpg" alt="Park">
+														</a>
+														<div class="caption">
+															<center><h3 style="font-size:20px"><?php echo $row['judul']?></h3></center><br>
+															<p style="font-size:12px"><?php echo $row['sinopsis'] ?></p>
+														</div>
 													</div>
 												</div>
-											</div>
-											<div class="col-sm-6 col-md-3">
-												<div class="thumbnail">
-													<a  href="">
-														<img src="images/park.jpg" alt="Park">
-													</a>
-													<div class="caption">
-														<center><h3>Thumbnail label</h3></center><br>
-														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-													</div>
-												</div>
-											</div>
-											<div class="col-sm-6 col-md-3">
-												<div class="thumbnail">
-													<a  href="">
-														<img src="images/park.jpg" alt="Park">
-													</a>
-													<div class="caption">
-														<center><h3>Thumbnail label</h3></center><br>
-														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-													</div>
-												</div>
-											</div>
-											<div class="col-sm-6 col-md-3">
-												<div class="thumbnail">
-													<a  href="">
-														<img src="images/park.jpg" alt="Park">
-													</a>
-													<div class="caption">
-														<center><h3>Thumbnail label</h3></center><br>
-														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-													</div>
-												</div>
-											</div>
+												<?php } ?>
 										</div>
 									</div>
 								</div>

@@ -13,7 +13,7 @@
 					</div>
 					<img src="images/2.png" />
 				</div>
-				<div class="step" data-color="color-4" data-x="-100" data-z="1500" data-rotate="170">
+				<div class="step" data-color="color-1" data-x="-100" data-z="1500" data-rotate="170">
 					<div class="jms-content">
 						<h3>Tidak perlu ruang lebih untuk menyimpan buku</h3>
 					<p>Bingung anda tak punya lemari untuk menyimpan buku? kini Digital Library dapat jadi solusi</p>
@@ -24,7 +24,7 @@
 					<div class="jms-content">
 						<h3>Gratis dan Legal...</h3>
 					<p>Males cari buku di Google secara ilegal? dengan Digital Library kini lebih mudah dan legal</p>
-						<a class="jms-link" href="#">Baca Sekarang</a>
+						<a class="jms-link" href="index.php?page=daftarbuku">Baca Sekarang</a>
 					</div>
 					<img src="images/4.png" />
 				</div>

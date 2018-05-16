@@ -13,14 +13,16 @@ class masukan {
                 $pengarang = $_POST['pengarang'];
                 $penerbit = $_POST['penerbit'];
                 $kategori = $_POST['kategori'];
-                $sql = "update tb_buku set kode_buku=:kd_buku, judul=:judul, pengarang=:pengarang, penerbit=:penerbit, kategori=:kategori where kode_buku=:kd_buku";
+                $sinopsis = $_POST['sinopsis'];
+                $sql = "update tb_buku set kode_buku=:kd_buku, judul=:judul, pengarang=:pengarang, penerbit=:penerbit, kategori=:kategori, sinopsis=:sinopsis where kode_buku=:kd_buku";
                     $query= $conn->prepare($sql);
                     $dataBuku = array(
                         ':kd_buku' => $kd_buku,
                         ':judul'=> $judul,
                         ':pengarang' => $pengarang,
                         ':penerbit' => $penerbit,
-                        ':kategori' => $kategori                        
+                        ':kategori' => $kategori,
+                        ':sinopsis' => $sinopsis                      
                     );
                     $query->bindValue( ":kd_buku", $kd_buku, PDO::PARAM_INT );
                     $query->execute($dataBuku);

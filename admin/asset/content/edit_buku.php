@@ -57,8 +57,15 @@
                                           <option value="Novel">Novel</option>
                                           <option value="Manga/Komik">Manga/Komik</option>
                                           <option value="Soal Latihan">Soal Latihan</option>
+                                          <option value="Tugas Akir">Tugas Akhir</option>
                                       </select>
                                   </div>
+                          </div>
+                          <div class="control-group">
+                                <label class="control-label" for="sinopsis">Sinopsis</label>
+                                <div class="controls">
+                                    <textarea name="sinopsis" class="span6" id="" cols="30" rows="10"></textarea>
+                                </div>
                           </div>
                           <div class="form-actions">
                               <button type="submit" class="btn btn-success" name="submit">Simpan</button>

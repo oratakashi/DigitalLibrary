@@ -7,6 +7,8 @@
   <head>
     <meta charset="utf-8">
     <title>Digital Library | Akademi Komunitas Negeri Kajen</title>
+    <link rel="shortcut icon" href="proyek/icon.png" type="image/x-icon">
+    <link rel="icon" href="proyek/icon.png" type="image/x-icon">
     <meta name="description" content="This is a free Bootstrap landing page theme created for BootstrapZero. Feature video background and one page design." />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Codeply">

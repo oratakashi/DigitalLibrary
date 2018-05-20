@@ -36,7 +36,7 @@
 												?>
 												<tr>
                                                 <td><?php echo $row['kode_buku']?></td>
-                                                <td><?php echo $row['judul']?></td>
+                                                <td><a href="detailbuku.php?id=<?php echo $row['kode_buku'] ?>"><?php echo $row['judul']?></a></td>
                                                 <td><?php echo $row['pengarang']?></td>
                                                 <td><?php echo $row['penerbit']?></td>
                                                 <td><?php echo $row['kategori']?></td>

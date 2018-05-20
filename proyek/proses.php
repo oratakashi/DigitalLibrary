@@ -35,8 +35,11 @@ class Login {
                                 //echo $data['password'];
                             }else{
                                 session_start(); // turn the session on
-                                $_SESSION['username'] = $username; // use username as the session
+                                $_SESSION['username'] = $data['username'];
+                                $_SESSION['email'] = $data['email'];
+                                $_SESSION['nim'] = $data['nim'];
                                 $_SESSION['nama'] = $data['nama'];
+                                $_SESSION['id'] = $data['id_anggota'];
                                 header('Location: member.php');
                             }
                         }
@@ -57,8 +60,11 @@ class Login {
                                     //echo $data['password'];
                                 }else{
                                     session_start(); // turn the session on
-                                    $_SESSION['username'] = $username; // use username as the session
+                                    $_SESSION['username'] = $data['username'];
+                                    $_SESSION['email'] = $data['email'];
+                                    $_SESSION['nim'] = $data['nim'];
                                     $_SESSION['nama'] = $data['nama'];
+                                    $_SESSION['id'] = $data['id_anggota'];
                                     header('Location: member.php');
                                 }
                             }
@@ -79,8 +85,11 @@ class Login {
                                         //echo $data['password'];
                                     }else{
                                         session_start(); // turn the session on
-                                        $_SESSION['username'] = $username; // use username as the session
+                                        $_SESSION['username'] = $data['username'];
+                                        $_SESSION['email'] = $data['email'];
+                                        $_SESSION['nim'] = $data['nim'];
                                         $_SESSION['nama'] = $data['nama'];
+                                        $_SESSION['id'] = $data['id_anggota'];
                                         header('Location: member.php');
                                     }
                                 }

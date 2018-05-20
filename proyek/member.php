@@ -3,13 +3,30 @@
     if(empty($_SESSION['username'])){
           header('Location: index.php'); //mengembalikan ke login
     }else{
+		require_once ("koneksi.php");
+		$connection = new ConnectionDB();
+        $conn = $connection->getConnection();
+		$status = 1;
+		$id = $_SESSION['id'];
+		$sql = "UPDATE tb_status SET statuslogin=$status where id_anggota = :id";
+        $result = $conn->prepare($sql);
+        $result->bindParam(':id', $id);
+		$result->execute();
+		$sql = "SELECT statuslogin from tb_status where id_anggota = :id";
+		$result = $conn->prepare($sql);
+        $result->bindParam(':id', $id);
+		$result->execute();
+		foreach($result as $data){
+			$_SESSION['status'] = $data['statuslogin'];
+		}
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
 <title>Digital Library | Akademi Negeri Kajen</title>
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-
+<link rel="shortcut icon" href="icon.png" type="image/x-icon">
+<link rel="icon" href="icon.png" type="image/x-icon">
 <?php include 'asset/css.php'?>
 </head>
 <body>

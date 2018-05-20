@@ -33,6 +33,10 @@
                         $sql 	= 'SELECT * FROM tb_anggota';
                         $result = $conn->prepare($sql);
                         $result->execute();
+                        $sql 	= 'SELECT * FROM tb_status';
+                        $query = $conn->prepare($sql);
+                        $query->execute();
+                        foreach($query as $status){}
                     ?>   
                     <table class="table table-striped table-bordered datatable-extended">
                                     <thead>
@@ -53,7 +57,7 @@
                                                 <td><?php echo $row['username']?></td>
                                                 <td><?php echo $row['nama']?></td>
                                                 <td><?php echo $row['email']?></td>
-                                                <td><a href="action/hapus-anggota.php?id_anggota=<?php echo $row['id_anggota'] ?>"><button class="btn btn-danger">Hapus</button></a></td>
+                                                <td><a href="" style="margin-right:5px"><button class="btn btn-info">Pesan</button></a><a href="action/hapus-anggota.php?id_anggota=<?php echo $row['id_anggota'] ?>"><button class="btn btn-danger">Hapus</button></a></td>
                                             </tr>
                                         <?php } ?>                                   
                                     </tbody>

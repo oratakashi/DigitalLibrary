@@ -10,6 +10,6 @@
 								<li>
 									<a href="index.php?page=kategori"><i class="fa fa-list" aria-hidden="true"></i> Kategori </a> 
 								</li>
-								<li><a href="index.php?page=daftarbuku"> <i class="fa fa-book" aria-hidden="true"></i> Daftar Buku</a></li>								
+								<li><a href="daftarbuku.php"> <i class="fa fa-book" aria-hidden="true"></i> Daftar Buku</a></li>								
 							</ul>
 						</div>

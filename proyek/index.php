@@ -8,6 +8,8 @@
 	<head>
 		<title>Digital Library | Akademi Komunitas Negeri Kajen</title>
 		<!-- Import JQuery dan CSS -->
+		<link rel="shortcut icon" href="icon.png" type="image/x-icon">
+		<link rel="icon" href="icon.png" type="image/x-icon">
 		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 		<?php include 'asset/css.php'?>
 	</head>

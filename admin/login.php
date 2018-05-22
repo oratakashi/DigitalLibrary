@@ -31,6 +31,8 @@ class Login {
                         }else{
                             session_start(); // turn the session on
                             $_SESSION['username'] = $username; // use username as the session
+                            $_SESSION['nama'] = $data['nama'];
+                            $_SESSION['level_user'] = $data['level_user'];
                             header('Location: dashboard.php');
                         }
                     }

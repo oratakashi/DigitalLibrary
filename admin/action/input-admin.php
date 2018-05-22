@@ -13,6 +13,7 @@ class masukan {
                 $email = $_POST['email'];
                 $password = $_POST['password'];
                 $cpassword = $_POST['cpassword'];
+                $lvluser = $_POST['lvluser'];
                 
                 if($password == $cpassword){
                     $sql = "insert into tb_anggota (nim,username,nama,email, password) 
@@ -27,8 +28,26 @@ class masukan {
                     );
                     $query->bindValue( ":nim", $nim, PDO::PARAM_INT );
                     $query->execute($dataAnggota);
-                    
-                    header('Location: ../dashboard.php?page=user');
+                    $sql = "SELECT id_anggota from tb_anggota where nim=$nim";
+                    $cariid= $conn->prepare($sql);
+                    $cariid->execute();
+                    foreach($cariid as $ids){}
+                    $id = $ids['id_anggota'];
+                    $sql = "insert into tb_admin (id_anggota,username,nama,email, password, level_user) 
+                    values (:id_anggota, :username, :nama, :email, :password, :level_user)";
+                    $result= $conn->prepare($sql);
+                    $dataAdmin= array(
+                        ':id_anggota' => $id,
+                        ':username' => $username,
+                        ':nama' => $nama,
+                        ':email' => $email,
+                        ':password' => $password,
+                        ':level_user' => $lvluser
+                    );
+                    $nyoba= $conn->prepare($sql);
+                    $nyoba->bindValue( ":id_anggota", $id, PDO::PARAM_INT );
+                    $nyoba->execute($dataAdmin);
+                    header('Location: ../dashboard.php?page=admin#admin');
                 }
                 else{
                     echo "Password dan Konfirmasi Password tidak sama";

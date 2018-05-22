@@ -51,7 +51,7 @@
 					include 'asset/content/daftar-buku.php';
 				}
 				else{
-					include 'asset/content/daftar-buku.php';
+					include 'asset/content/daftar-buku-kategori.php';
 				}
 			?>
 		</div>

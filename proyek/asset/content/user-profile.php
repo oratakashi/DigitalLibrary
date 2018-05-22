@@ -31,17 +31,15 @@
                                                         $result->execute();
                                                         foreach($result as $row){
                                                         }
-                                                        $sql 	= "SELECT * FROM tb_status where id_anggota=$id";
+                                                        /*$sql 	= "SELECT statuslogin FROM tb_anggota where id_anggota=$id";
                                                         $result = $conn->prepare($sql);
                                                         $result->execute();
                                                         foreach($result as $status){
-                                                        }
+                                                        }*/
                                                     ?>
                                                     <h2 class="w3_inner_tittle" style="margin-top:130px; margin-bottom:5px"><?php echo $data['nama']?></h2>
-                                                    <p>NIM : <?php echo $_GET['id']?>  <?php if($status['statuslogin'] == 1){?><i class="fa fa-circle" style="color:green"></i> Online<?php } else{?><i class="fa fa-circle" ></i> Offline <?php } ?>
+                                                    <p>NIM : <?php echo $_GET['id']?>  <?php if($data   ['statuslogin'] == 1){?><i class="fa fa-circle" style="color:green"></i> Online<?php } else{?><i class="fa fa-circle" ></i> Offline <?php } ?>
                                                     </p>
-                                                    <a style="float:right; margin-bottom:10px; margin-left:5px"><button class="btn btn-success"><i class="fa fa-cog"></i></button></a>
-                                                    <a style="float:right; margin-bottom:10px; margin-left:10px"><button class="btn btn-success"><i class="fa fa-list"></i> Log Aktifitas</button></a>
                                                     <a style="float:right; margin-bottom:10px"><button class="btn btn-success"><i class="fa fa-envelope"></i> Kirim Pesan</button></a>
                                                 </div>
                                                 <hr width='100%' size='20' >

@@ -59,6 +59,12 @@
                                     <textarea name="sinopsis" class="span6" id="" cols="30" rows="10"></textarea>
                                 </div>
                           </div>
+                          <div class="control-group">
+                                <label class="control-label" for="deskripsi">Deskripsi</label>
+                                <div class="controls">
+                                    <textarea name="deskripsi" class="span6" id="" cols="30" rows="10"></textarea>
+                                </div>
+                          </div>
                           <div class="form-actions">
                               <button type="submit" class="btn btn-success" name="submit">Simpan</button>
                           </div> 

@@ -8,11 +8,11 @@
         $conn = $connection->getConnection();
 		$status = 1;
 		$id = $_SESSION['id'];
-		$sql = "UPDATE tb_status SET statuslogin=$status where id_anggota = :id";
+		$sql = "UPDATE tb_anggota SET statuslogin=$status where id_anggota = :id";
         $result = $conn->prepare($sql);
         $result->bindParam(':id', $id);
 		$result->execute();
-		$sql = "SELECT statuslogin from tb_status where id_anggota = :id";
+		$sql = "SELECT statuslogin from tb_anggota where id_anggota = :id";
 		$result = $conn->prepare($sql);
         $result->bindParam(':id', $id);
 		$result->execute();

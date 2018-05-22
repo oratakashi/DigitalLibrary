@@ -33,10 +33,6 @@
                         $sql 	= 'SELECT * FROM tb_anggota';
                         $result = $conn->prepare($sql);
                         $result->execute();
-                        $sql 	= 'SELECT * FROM tb_status';
-                        $query = $conn->prepare($sql);
-                        $query->execute();
-                        foreach($query as $status){}
                     ?>   
                     <table class="table table-striped table-bordered datatable-extended">
                                     <thead>

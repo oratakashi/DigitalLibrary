@@ -7,7 +7,7 @@ class Logout {
         $conn = $connection->getConnection();
 		$status = 0;
 		$id = $_SESSION['id'];
-		$sql = "UPDATE tb_status SET statuslogin=$status where id_anggota = :id";
+		$sql = "UPDATE tb_anggota SET statuslogin=$status where id_anggota = :id";
         $result = $conn->prepare($sql);
         $result->bindParam(':id', $id);
 		$result->execute();

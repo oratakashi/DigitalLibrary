@@ -38,6 +38,12 @@
               elseif($_GET['page']=="user-tambah"){
                 include 'asset/navbar-user.php';
               }
+              elseif($_GET['page']=="admin"){
+                include 'asset/navbar-admin.php';
+              }
+              elseif($_GET['page']=="admin-tambah"){
+                include 'asset/navbar-admin.php';
+              }
             ?>
             <!-- /container --> 
           </div>
@@ -54,6 +60,12 @@
             }
             elseif($_GET['page']=="buku"){
               include 'asset/buku.php';
+            }
+            elseif($_GET['page']=="admin"){
+              include 'asset/admin.php';
+            }
+            elseif($_GET['page']=="admin-tambah"){
+              include 'asset/admin.php';
             }
             elseif($_GET['page']=="buku-tambah"){
               include 'asset/content/tambah-buku.php';

@@ -40,6 +40,13 @@ class Login {
                                 $_SESSION['nim'] = $data['nim'];
                                 $_SESSION['nama'] = $data['nama'];
                                 $_SESSION['id'] = $data['id_anggota'];
+                                $id = $data['id_anggota'];
+                                $sql = "SELECT level_user from tb_admin where id_anggota=$id";
+                                $query = $conn->prepare($sql);
+                                $query->execute();
+                                foreach($query as $lvluser){}
+                                $_SESSION['level_user']=$lvluser['level_user'];
+
                                 header('Location: member.php');
                             }
                         }

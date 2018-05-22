@@ -1,4 +1,4 @@
-<form action="cari-user.php" method="get">
+<form action="cari-admin.php" method="get">
 										<input type="text" placeholder="&#xF002; Pencarian" style="width:94%;font-family:Arial, FontAwesome" name="cari" id="cari">
 										<input type="submit" value="Cari" class="btn" style="margin-bottom:9px;" name="submit">
 										Cari Berdasarkan :

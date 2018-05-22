@@ -23,7 +23,7 @@
             <div class="span12">
                 <div class="widget widget-nopad">
                 <div class="widget-header"> <i class="icon-list-alt"></i>
-                <h3> Daftar Anggota</h3> <a href="dashboard.php?page=user-tambah"><button class="btn btn-success"><i class="icon-plus" style="margin-right:2px;"></i> Tambah</button></a>
+                <h3> Daftar Anggota</h3> <a href="dashboard.php?page=user-tambah"><button class="btn btn-success"><i class="icon-plus" style="margin-right:2px;color:white; margin-left:0px"></i> Tambah</button></a>
             </div>
             <!-- /widget-header -->
             <div class="widget-content">

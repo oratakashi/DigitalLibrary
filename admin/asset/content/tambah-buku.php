@@ -6,6 +6,7 @@
                   <div class="widget widget-nopad">
                   <div class="widget-header"> <i class="icon-book"></i>
                   <h3> Tambah Buku</h3>
+                  <a href="dashboard.php?page=buku" style="float:right"><button class="btn btn-danger" style="margin-right:5px;"><i class=" icon-remove" style="margin-bottom:3px;margin-left:0px;margin-right:0;color:white"></i></button></a>
               </div>
               <!-- /widget-header -->
               <div class="widget-content">

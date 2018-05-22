@@ -21,7 +21,7 @@
 						
 						<div class="tabbable">
 						<ul class="nav nav-tabs">
-						  <li class=""><a href="#dashboard" data-toggle="tab">Dashboard</a>
+						  <li class=""><a href="#dashboard" data-toggle="tab">Statistik</a>
 						  <li><a href="#admin" data-toggle="tab">Kelola Admin</a>
 						  </li>
                           <li><a href="#situs" data-toggle="tab">Kelola Situs</a></li>

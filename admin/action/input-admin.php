@@ -47,7 +47,7 @@ class masukan {
                     $nyoba= $conn->prepare($sql);
                     $nyoba->bindValue( ":id_anggota", $id, PDO::PARAM_INT );
                     $nyoba->execute($dataAdmin);
-                    header('Location: ../dashboard.php?page=admin#admin');
+                    header('Location: ../dashboard.php?page=admin');
                 }
                 else{
                     echo "Password dan Konfirmasi Password tidak sama";

@@ -2,7 +2,11 @@
 <?php
 	session_start();
 	if(empty($_SESSION['username'])){
-		?>
+        if($_GET['q']==""){
+            header('Location: index.php');
+        }
+        else{
+  ?>
 		<!DOCTYPE html>
 		<html lang="zxx">
 			<head>
@@ -16,13 +20,7 @@
 					<?php include 'asset/main-nav.php'?>
 					<div class="clearfix"></div>
 					<?php 
-						error_reporting(0);
-						if($_GET['kategori']==""){
-                            include 'asset/content/daftar-buku.php';
-                        }
-                        else{
-                            include 'asset/content/daftar-buku-kategori.php';
-                        }
+						include 'asset/content/pencarian.php';
 					?>
 				</div>
 				<!-- Import Javascript dan Footer -->
@@ -30,7 +28,11 @@
 				<?php include 'asset/script.php'?>
 			</body>
 		</html>
-  	<?php }else{
+  	<?php }}else{
+          if($_GET['q']==""){
+            header('Location: member.php');
+        }
+        else{
 ?>
 <!-- HTML di Mulai -->
 <!DOCTYPE html>
@@ -47,12 +49,7 @@
 			<div class="clearfix"></div>
 			<?php 
 				error_reporting(0);
-				if($_GET['kategori']==""){
-					include 'asset/content/daftar-buku.php';
-				}
-				else{
-					include 'asset/content/daftar-buku-kategori.php';
-				}
+				include 'asset/content/pencarian.php';
 			?>
 		</div>
 		<!-- Import Javascript dan Footer -->
@@ -60,4 +57,4 @@
 		<?php include 'asset/script.php'?>
 	</body>
 </html>
-<?php } ?>
+<?php }} ?>

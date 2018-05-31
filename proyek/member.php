@@ -46,6 +46,9 @@
 				if($_GET['page']=="daftarbuku"){
 					include 'asset/content/daftar-buku.php';
 				}
+				if($_GET['page']=="pengaturan"){
+					include 'asset/content/pengaturan.php';
+				}
 		?>
 </div>
 <?php include 'asset/footer.php'?>	

@@ -10,7 +10,7 @@
 					</nav>
 				</li>
 				<!-- //nav_agile_w3l -->
-				<li class="second logo"><h1><a href="#"><i class="fa fa-graduation-cap" aria-hidden="true"></i>Digital Library </a></h1></li>
+				<li class="second logo"><img src="images/logo.png" style="margin-top:5px"></img></li>
 					<li class="second admin-pic">
 				       
 				</li>
@@ -20,9 +20,9 @@
 
 				<li class="second w3l_search">
 				 
-						<form action="#" method="post">
-							<input type="search" name="search" placeholder="Cari Judul Buku, Pengarang, Dan Lainya.." required="">
-							<button class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+						<form action="cari.php" method="get">
+							<input type="search" name="q" placeholder="&#xF002; Cari Judul Buku, Nama User, Dan Lainya.." required=""style="font-family:Arial, FontAwesome;">
+							<input type="submit" class="btn btn-default" value="&#xF002;" style="font-family:Arial, FontAwesome;visibility: hidden;">
 						</form>
 					
 				</li>

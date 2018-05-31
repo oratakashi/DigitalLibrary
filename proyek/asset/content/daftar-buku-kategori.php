@@ -30,7 +30,7 @@
                                                     $kategori = $_GET['kategori'];
 													$connection = new ConnectionDB();
 													$conn = $connection->getConnection();
-													$sql 	= "SELECT * FROM tb_buku  where kategori=$kategori";
+													$sql 	= "SELECT * FROM tb_buku  where kategori='$kategori' ORDER BY judul ASC";
 													$result = $conn->prepare($sql);
 													$result->execute();
 													foreach($result as $row){ 

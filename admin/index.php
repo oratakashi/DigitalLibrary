@@ -31,7 +31,7 @@ session_start();
         
         <!-- APP WRAPPER -->
         <?php
-            if(empty($_SESSION['username'])){
+            if(empty($_SESSION['id'])){
                 error_reporting(0);
                 if($_GET['error']==""){
                     include 'asset/login-main.php';
@@ -41,7 +41,19 @@ session_start();
                 }
             }
             else{
-                header('Location: dashboard.php');
+                require_once ("koneksi.php");
+                $id_anggota = $_SESSION['id'];
+                $connection = new ConnectionDB();
+                $conn = $connection->getConnection();
+                $sql 	= "SELECT * FROM tb_admin where id_anggota=$id_anggota";
+                $result = $conn->prepare($sql);
+                $result->execute();
+                $count = $result->rowCount();
+                if($count == 1){
+                    header('Location: dashboard.php');
+                }else{
+                    include 'asset/login-main.php';
+                }
             }
         ?>
         <!-- END APP WRAPPER -->

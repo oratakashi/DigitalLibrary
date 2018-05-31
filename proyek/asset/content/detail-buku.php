@@ -83,9 +83,32 @@
 						
 						<!--  -->
 						<div class="p-t-33">
-                            <button class="btn btn-success" style="padding-right:25px;padding-left:25px">
-										<i class="fa fa-star" style="margin-right:5px"></i>Favorit
-							</button>
+							<?php
+								if(empty($_SESSION['username'])){
+							?>
+								<a href="action/favorit.php?id=<?php echo $id ?>"><button class="btn btn-success" style="padding-right:25px;padding-left:25px">
+											<i class="fa fa-star" style="margin-right:5px"></i>Favorit
+								</button></a>
+								<?php }else{
+									require_once ("koneksi.php");
+									$id = $_GET['id'];
+									$id_anggota = $_SESSION['id'];
+									$connection = new ConnectionDB();
+									$conn = $connection->getConnection();
+									$sql 	= "SELECT * FROM tb_favorit where kode_buku=$id and id_anggota=$id_anggota";
+									$result = $conn->prepare($sql);
+									$result->execute();
+									$count = $result->rowCount();
+									if($count == 1){ ?>
+										<a href="action/dfavorit.php?id=<?php echo $id ?>"><button class="btn btn-success" style="padding-right:25px;padding-left:25px">
+											<i class="fa fa-star" style="margin-right:5px"></i>Hapus Favorit
+										</button></a>
+									<?php } else { ?>
+										<a href="action/favorit.php?id=<?php echo $id ?>"><button class="btn btn-success" style="padding-right:25px;padding-left:25px">
+											<i class="fa fa-star" style="margin-right:5px"></i>Favorit
+										</button></a>
+									<?php }
+								}?>
 							<button class="btn btn-success" style="padding-right:25px;padding-left:25px">
 										Download
 							</button>

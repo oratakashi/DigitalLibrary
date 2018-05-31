@@ -50,21 +50,39 @@
                                   <div class="controls">
                                       <select name="kategori" id="kategori">
                                           <option value="">Kategori</option>
-                                          <option value="Ilmu Komputer">Ilmu Komputer</option>
-                                          <option value="Otomotif dan Mesin">Otomotif dan Mesin</option>
-                                          <option value="Kimia Industri">Kimia Industri</option>
-                                          <option value="Pelajaran Umum">Pelajaran Umum</option>
+                                          <option value="Komputer">Komputer</option>
+                                          <option value="Mesin">Mesin</option>
+                                          <option value="Kimia">Kimia</option>
+                                          <option value="Umum"> Umum</option>
                                           <option value="Novel">Novel</option>
-                                          <option value="Manga/Komik">Manga/Komik</option>
-                                          <option value="Soal Latihan">Soal Latihan</option>
-                                          <option value="Tugas Akir">Tugas Akhir</option>
+                                          <option value="Komik">Komik</option>
+                                          <option value="Soal">Soal</option>
+                                          <option value="TugasAkhir">Tugas Akhir</option>
                                       </select>
                                   </div>
                           </div>
                           <div class="control-group">
                                 <label class="control-label" for="sinopsis">Sinopsis</label>
                                 <div class="controls">
-                                    <textarea name="sinopsis" class="span6" id="" cols="30" rows="10"></textarea>
+                                    <textarea name="sinopsis" class="span6" id="" cols="30" rows="10" value="<?php echo $row['sinopsis'] ?>"></textarea>
+                                </div>
+                          </div>
+                          <div class="control-group">
+                                <label class="control-label" for="deskripsi">Deskripsi</label>
+                                <div class="controls">
+                                    <textarea name="deskripsi" class="span6" id="" cols="30" rows="10" value="<?php echo $row['deskripsi'] ?>"></textarea>
+                                </div>
+                          </div>
+                          <div class="control-group">
+                                <label class="control-label" for="gambar">Cover Buku</label>
+                                <div class="controls">
+                                    <input type="file"  name="gambar" id="" accept="image/*">
+                                </div>
+                          </div>
+                          <div class="control-group">
+                                <label class="control-label" for="berkas">File Buku</label>
+                                <div class="controls">
+                                    <input type="file"  name="berkas" id="">
                                 </div>
                           </div>
                           <div class="form-actions">

@@ -1,7 +1,7 @@
 <?php
     session_start();
     if(empty($_SESSION['username'])){
-          header('Location: index.php'); //mengembalikan ke login
+          header('Location: login.php'); //mengembalikan ke login
     }else{
 ?>
 <!DOCTYPE html>

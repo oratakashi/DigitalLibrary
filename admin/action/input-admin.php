@@ -11,8 +11,8 @@ class masukan {
                 $username = $_POST['username'];
                 $nama = $_POST['nama'];
                 $email = $_POST['email'];
-                $password = $_POST['password'];
-                $cpassword = $_POST['cpassword'];
+                $password = sha1($_POST['password']);
+                $cpassword = sha1($_POST['cpassword']);//Encrypt Password menggunakan SHA1
                 $lvluser = $_POST['lvluser'];
                 
                 if($password == $cpassword){

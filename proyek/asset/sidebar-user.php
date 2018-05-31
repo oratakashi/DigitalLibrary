@@ -4,7 +4,6 @@
 									<span class="prfil-img"><img src="images/a1.jpg" alt=""> </span><?php echo $_SESSION['nama'] ?>
 									<ul class="gn-submenu">
 										<li class="mini_list_agile"><a href="profile.php?id=<?php echo $_SESSION['nim'] ?>"><i class="fa fa-users" aria-hidden="true" ></i>Profile</a></li>
-										<li class="mini_list_agile"><a><i class="fa fa-envelope-o" aria-hidden="true" ></i>Pesan</a></li>
 									</ul>
 								</li>
 								<li><a href="member.php"> <i class="fa fa-home"></i> Beranda</a></li>

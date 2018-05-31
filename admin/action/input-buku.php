@@ -15,6 +15,8 @@ class masukan {
                 $kategori = $_POST['kategori'];
                 $sinopsis = $_POST['sinopsis'];
                 $deskripsi = $_POST['deskripsi'];
+                //varupload buku
+                
                 $sql = "insert into tb_buku values (:kd_buku, :judul, :pengarang, :penerbit, :kategori, :sinopsis, :deskripsi)";
                     $query= $conn->prepare($sql);
                     $dataBuku = array(
@@ -28,7 +30,7 @@ class masukan {
                     );
                     $query->bindValue( ":kd_buku", $kd_buku, PDO::PARAM_INT );
                     $query->execute($dataBuku);
-                    header('Location: ../dashboard.php?page=buku');
+                    header('Location: input-gambar.php');
             }
         }catch (PDOException $e){
             echo "ERROR : " . $e->getMessage();

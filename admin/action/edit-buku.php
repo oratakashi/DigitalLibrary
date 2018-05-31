@@ -14,7 +14,8 @@ class masukan {
                 $penerbit = $_POST['penerbit'];
                 $kategori = $_POST['kategori'];
                 $sinopsis = $_POST['sinopsis'];
-                $sql = "update tb_buku set kode_buku=:kd_buku, judul=:judul, pengarang=:pengarang, penerbit=:penerbit, kategori=:kategori, sinopsis=:sinopsis where kode_buku=:kd_buku";
+                $deskripsi = $_POST['deskripsi'];
+                $sql = "update tb_buku set kode_buku=:kd_buku, judul=:judul, pengarang=:pengarang, penerbit=:penerbit, kategori=:kategori, sinopsis=:sinopsis, deskripsi=:deskripsi where kode_buku=:kd_buku";
                     $query= $conn->prepare($sql);
                     $dataBuku = array(
                         ':kd_buku' => $kd_buku,
@@ -22,7 +23,8 @@ class masukan {
                         ':pengarang' => $pengarang,
                         ':penerbit' => $penerbit,
                         ':kategori' => $kategori,
-                        ':sinopsis' => $sinopsis                      
+                        ':sinopsis' => $sinopsis,
+                        ':deskripsi' => $deskripsi                      
                     );
                     $query->bindValue( ":kd_buku", $kd_buku, PDO::PARAM_INT );
                     $query->execute($dataBuku);

@@ -17,8 +17,8 @@ class Login {
                     header('Location: index.php');
                 }else{
                     $username = $_POST['username'];
-                    $password = $_POST['password'];
-
+                    $password = sha1($_POST['password']);
+                    
                     $sql = "SELECT * FROM tb_admin";
                     $result = $conn->prepare($sql);
                     $result->execute();
@@ -33,6 +33,7 @@ class Login {
                             $_SESSION['username'] = $username; // use username as the session
                             $_SESSION['nama'] = $data['nama'];
                             $_SESSION['level_user'] = $data['level_user'];
+                            $_SESSION['id'] = $data['id_anggota'];
                             header('Location: dashboard.php');
                         }
                     }

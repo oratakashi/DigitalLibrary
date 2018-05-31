@@ -16,9 +16,15 @@ class Login {
                 if(empty($_POST['username']) || empty($_POST['password'])){
                     header('Location: login.php');
                 }else{
+                    $status = 0;
+                    $id = $_SESSION['id'];
+                    $sql = "UPDATE tb_anggota SET statuslogin=$status where id_anggota = :id";
+                    $result = $conn->prepare($sql);
+                    $result->bindParam(':id', $id);
+                    $result->execute();
+                    session_destroy();
                     $username = $_POST['username'];
-                    $password = $_POST['password'];
-
+                    $password = sha1($_POST['password']);
                     $sql = "SELECT * FROM tb_anggota where username=:username ";
                     $result = $conn->prepare($sql);
                     $result->bindParam(':username', $username);
@@ -72,6 +78,12 @@ class Login {
                                     $_SESSION['nim'] = $data['nim'];
                                     $_SESSION['nama'] = $data['nama'];
                                     $_SESSION['id'] = $data['id_anggota'];
+                                    $id = $data['id_anggota'];
+                                    $sql = "SELECT level_user from tb_admin where id_anggota=$id";
+                                    $query = $conn->prepare($sql);
+                                    $query->execute();
+                                    foreach($query as $lvluser){}
+                                    $_SESSION['level_user']=$lvluser['level_user'];
                                     header('Location: member.php');
                                 }
                             }
@@ -97,6 +109,12 @@ class Login {
                                         $_SESSION['nim'] = $data['nim'];
                                         $_SESSION['nama'] = $data['nama'];
                                         $_SESSION['id'] = $data['id_anggota'];
+                                        $id = $data['id_anggota'];
+                                        $sql = "SELECT level_user from tb_admin where id_anggota=$id";
+                                        $query = $conn->prepare($sql);
+                                        $query->execute();
+                                        foreach($query as $lvluser){}
+                                        $_SESSION['level_user']=$lvluser['level_user'];
                                         header('Location: member.php');
                                     }
                                 }

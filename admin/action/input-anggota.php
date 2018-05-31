@@ -11,8 +11,8 @@ class masukan {
                 $username = $_POST['username'];
                 $nama = $_POST['nama'];
                 $email = $_POST['email'];
-                $password = $_POST['password'];
-                $cpassword = $_POST['cpassword'];
+                $password = sha1($_POST['password']); //Encrypt Password menggunakan SHA1
+                $cpassword = sha1($_POST['cpassword']);
                 
                 if($password == $cpassword){
                     $sql = "insert into tb_anggota (nim,username,nama,email, password) 

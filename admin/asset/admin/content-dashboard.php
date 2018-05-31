@@ -19,7 +19,16 @@
         echo $hasil;
     ?>    
     <p>Anggota Terdaftar</p></span> </div>
-    <div class="stat"> <i class="icon-star" style="color:yellow"></i> <span class="value">851<p>Buku Favorit</p></span> </div>
+    <div class="stat"> <i class="icon-star" style="color:yellow"></i> <span class="value">
+    <?php
+        $sql 	= 'SELECT Distinct COUNT(*) FROM tb_favorit';
+        $result = $conn->prepare($sql);
+        $result->execute();
+        foreach($result as $data){}
+        $hasil = $data[0];
+        echo $hasil;
+    ?>
+    <p>Buku Favorit</p></span> </div>
     <div class="stat"> <i class="icon-circle" style="color:green"></i> <span class="value">
     <?php
         $sql 	= 'SELECT COUNT(*) FROM tb_anggota where statuslogin=1';

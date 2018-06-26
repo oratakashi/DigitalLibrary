@@ -16,13 +16,13 @@ class Login {
                 if(empty($_POST['username']) || empty($_POST['password'])){
                     header('Location: login.php');
                 }else{
-                    $status = 0;
+                    $status = 0; // Mengset Status Login Menjadi Offline
                     $id = $_SESSION['id'];
                     $sql = "UPDATE tb_anggota SET statuslogin=$status where id_anggota = :id";
                     $result = $conn->prepare($sql);
                     $result->bindParam(':id', $id);
                     $result->execute();
-                    session_destroy();
+                    session_destroy(); //Memaksa Logout Session Yang Ada
                     $username = $_POST['username'];
                     $password = sha1($_POST['password']);
                     $sql = "SELECT * FROM tb_anggota where username=:username ";
@@ -52,7 +52,17 @@ class Login {
                                 $query->execute();
                                 foreach($query as $lvluser){}
                                 $_SESSION['level_user']=$lvluser['level_user'];
-
+                                $sql = "SELECT * from tb_foto where id_anggota=$id";
+                                $result = $conn->prepare($sql);
+                                $result->execute();
+                                $count = $result->rowCount();
+                                if($count == 0){
+                                    $_SESSION['foto']="default.jpg";
+                                }else{
+                                    foreach($result as $hasil){}
+                                    $_SESSION['foto']=$hasil['nama_file'];
+                                }
+                                foreach ($result as $data){}
                                 header('Location: member.php');
                             }
                         }
@@ -84,6 +94,17 @@ class Login {
                                     $query->execute();
                                     foreach($query as $lvluser){}
                                     $_SESSION['level_user']=$lvluser['level_user'];
+                                    $sql = "SELECT * from tb_foto where id_anggota=$id";
+                                    $result = $conn->prepare($sql);
+                                    $result->execute();
+                                    $count = $result->rowCount();
+                                    if($count == 0){
+                                        $_SESSION['foto']="default.jpg";
+                                    }else{
+                                        foreach($result as $hasil){}
+                                        $_SESSION['foto']=$hasil['nama_file'];
+                                    }
+                                    foreach ($result as $data){}
                                     header('Location: member.php');
                                 }
                             }

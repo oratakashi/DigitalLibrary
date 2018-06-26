@@ -33,3 +33,5 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link rel="stylesheet" type="text/css" href="vendor/MagnificPopup/magnific-popup.css">
 <link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
 
+<!-- CSS untuk Pengaturan Akun --> 
+<link rel="stylesheet" type="text/css" href="css/pengaturan.css">

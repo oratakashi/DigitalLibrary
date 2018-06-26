@@ -38,7 +38,7 @@
 													<td><?php echo $row['nama']?></td>
 													<td><?php echo $row['email']?></td>
 													<td><?php echo $row['level_user']?></td>
-													<td><a href="" style="margin-right:5px"><button class="btn btn-info">Pesan</button></a><a href="action/hapus-admin.php?id_anggota=<?php echo $row['id_anggota'] ?>"><button class="btn btn-danger">Hapus</button></a></td>
+													<td><a href="action/hapus-admin.php?id_anggota=<?php echo $row['id_anggota'] ?>"><button class="btn btn-danger">Hapus</button></a></td>
 												</tr>
 											<?php } ?>                                   
 										</tbody>

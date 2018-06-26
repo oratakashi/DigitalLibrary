@@ -53,7 +53,7 @@
                                                 <td><?php echo $row['username']?></td>
                                                 <td><?php echo $row['nama']?></td>
                                                 <td><?php echo $row['email']?></td>
-                                                <td><a href="action/hapus-anggota.php?id_anggota=<?php echo $row['id_anggota'] ?>"><button class="btn btn-danger">Hapus</button></a></td>
+                                                <td><a href="../proyek/profile.php?id=<?php echo $row['nim'] ?>" style="margin-right:5px"><button class="btn btn-info">Profil</button></a><a href="action/hapus-anggota.php?id_anggota=<?php echo $row['id_anggota'] ?>"><button class="btn btn-danger">Hapus</button></a></td>
                                             </tr>
                                         <?php } ?>                                   
                                     </tbody>

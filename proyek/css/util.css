@@ -260,6 +260,7 @@ iframe {border: none;}
 
 /*//////////////////////////////////////////////////////////////////
 [ PADDING ]*/
+.p-t-custom {padding: 4em 4em;}
 .p-t-0, .p-tb-0, .p-all-0 {padding-top: 0px;}
 .p-t-1, .p-tb-1, .p-all-1 {padding-top: 1px;}
 .p-t-2, .p-tb-2, .p-all-2 {padding-top: 2px;}
@@ -325,7 +326,7 @@ iframe {border: none;}
 .p-t-62, .p-tb-62, .p-all-62 {padding-top: 62px;}
 .p-t-63, .p-tb-63, .p-all-63 {padding-top: 63px;}
 .p-t-64, .p-tb-64, .p-all-64 {padding-top: 64px;}
-.p-t-65, .p-tb-65, .p-all-65 {padding-top: 65px;}
+.p-t-65, .p-tb-65, .p-all-65 {padding-top: 80px;}
 .p-t-66, .p-tb-66, .p-all-66 {padding-top: 66px;}
 .p-t-67, .p-tb-67, .p-all-67 {padding-top: 67px;}
 .p-t-68, .p-tb-68, .p-all-68 {padding-top: 68px;}

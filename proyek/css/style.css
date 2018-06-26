@@ -83,6 +83,19 @@ li.second.logo i.fa.fa-graduation-cap {
     display: none;
 }
 /*--- User Panel---*/
+.foto_profil{
+	width: 60px;
+	height: 60px;
+	margin-right: 5px;
+	/*mulai tambahan*/
+	
+}
+.foto_pengguna{
+	
+}
+.profil{
+	font-size: 20px;
+}
 .dropdown-menu {
     box-shadow: 2px 3px 4px rgba(0, 0, 0, .175);
 	-webkit-box-shadow: 2px 3px 4px rgba(0, 0, 0, .175);
@@ -2890,6 +2903,9 @@ li.second.logo.admin {
 	}
 }
 @media (max-width:667px){
+	.warning_w3ls_agile{
+		display: inline;
+	}
 	.over_lay_agile_pages_w3ls {
 		padding: 5em 0em 3em 0em;
 	}
@@ -2937,9 +2953,6 @@ li.second.logo.admin {
 	li.second.w3l_search.admin_login {
     float: left;
     width: 77%;
-	}
-	.warning_w3ls_agile{
-		display: inline;
 	}
 	.blank_w3ls_agile{
 		display: none;

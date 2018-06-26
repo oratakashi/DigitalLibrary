@@ -34,6 +34,23 @@ class Login {
                             $_SESSION['nama'] = $data['nama'];
                             $_SESSION['level_user'] = $data['level_user'];
                             $_SESSION['id'] = $data['id_anggota'];
+                            $_SESSION['email'] = $data['email'];
+                            $id = $data['id_anggota'];
+                            $sql="SELECT nim from tb_anggota where id_anggota=$id";
+                            $query = $conn->prepare($sql);
+                            $query -> execute();
+                            foreach($query as $nim);
+                            $_SESSION['nim'] = $nim['nim'];
+                            $sql = "SELECT * from tb_foto where id_anggota=$id";
+                            $result = $conn->prepare($sql);
+                            $result->execute();
+                            $count = $result->rowCount();
+                            if($count == 0){
+                                $_SESSION['foto']="default.jpg";
+                            }else{
+                                foreach($result as $hasil){}
+                                $_SESSION['foto']=$hasil['nama_file'];
+                            }
                             header('Location: dashboard.php');
                         }
                     }

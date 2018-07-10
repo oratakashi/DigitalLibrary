@@ -47,6 +47,11 @@ class Login {
                                 $_SESSION['nama'] = $data['nama'];
                                 $_SESSION['id'] = $data['id_anggota'];
                                 $id = $data['id_anggota'];
+                                $status = 1; // Mengset Status Login Menjadi Online
+                                $sql = "UPDATE tb_anggota SET statuslogin=$status where id_anggota = :id";
+                                $result = $conn->prepare($sql);
+                                $result->bindParam(':id', $id);
+                                $result->execute();
                                 $sql = "SELECT level_user from tb_admin where id_anggota=$id";
                                 $query = $conn->prepare($sql);
                                 $query->execute();
@@ -62,7 +67,6 @@ class Login {
                                     foreach($result as $hasil){}
                                     $_SESSION['foto']=$hasil['nama_file'];
                                 }
-                                foreach ($result as $data){}
                                 header('Location: member.php');
                             }
                         }
@@ -89,6 +93,11 @@ class Login {
                                     $_SESSION['nama'] = $data['nama'];
                                     $_SESSION['id'] = $data['id_anggota'];
                                     $id = $data['id_anggota'];
+                                    $status = 0; // Mengset Status Login Menjadi Offline
+                                    $sql = "UPDATE tb_anggota SET statuslogin=$status where id_anggota = :id";
+                                    $result = $conn->prepare($sql);
+                                    $result->bindParam(':id', $id);
+                                    $result->execute();
                                     $sql = "SELECT level_user from tb_admin where id_anggota=$id";
                                     $query = $conn->prepare($sql);
                                     $query->execute();
@@ -104,7 +113,6 @@ class Login {
                                         foreach($result as $hasil){}
                                         $_SESSION['foto']=$hasil['nama_file'];
                                     }
-                                    foreach ($result as $data){}
                                     header('Location: member.php');
                                 }
                             }
@@ -131,11 +139,26 @@ class Login {
                                         $_SESSION['nama'] = $data['nama'];
                                         $_SESSION['id'] = $data['id_anggota'];
                                         $id = $data['id_anggota'];
+                                        $status = 1; // Mengset Status Login Menjadi Offline
+                                        $sql = "UPDATE tb_anggota SET statuslogin=$status where id_anggota = :id";
+                                        $result = $conn->prepare($sql);
+                                        $result->bindParam(':id', $id);
+                                        $result->execute();
                                         $sql = "SELECT level_user from tb_admin where id_anggota=$id";
                                         $query = $conn->prepare($sql);
                                         $query->execute();
                                         foreach($query as $lvluser){}
                                         $_SESSION['level_user']=$lvluser['level_user'];
+                                        $sql = "SELECT * from tb_foto where id_anggota=$id";
+                                        $result = $conn->prepare($sql);
+                                        $result->execute();
+                                        $count = $result->rowCount();
+                                        if($count == 0){
+                                            $_SESSION['foto']="default.jpg";
+                                        }else{
+                                            foreach($result as $hasil){}
+                                            $_SESSION['foto']=$hasil['nama_file'];
+                                        }
                                         header('Location: member.php');
                                     }
                                 }
@@ -144,19 +167,6 @@ class Login {
                             }
                         }
                     }
-                    /*foreach($result as $data){
-                        if($username!=$data['username']){
-							header('Location: login.php?error=true');
-							//echo $data['username'];
-                        }else if($password!=$data['password']){
-							header('Location: login.php?error=true');
-							//echo $data['password'];
-                        }else{
-                            session_start(); // turn the session on
-                            $_SESSION['username'] = $username; // use username as the session
-                            header('Location: member.php');
-                        }
-                    }*/
                 }
             }
         }catch (PDOException $e){

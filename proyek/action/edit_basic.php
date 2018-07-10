@@ -27,12 +27,12 @@ class masukan {
                     );
                     $query->bindValue( ":id_anggota", $id_anggota, PDO::PARAM_INT );
                     $query->execute($dataAdmin);
-                    header('Location: ../member.php?page=pengaturan');
+                    $sql="UPDATE tb_anggota set username=:username, email=:email, nama=:nama where id_anggota=:id_anggota";
+                    $query= $conn->prepare($sql);
+                    $query->bindValue( ":id_anggota", $id_anggota, PDO::PARAM_INT );
+                    $query->execute($dataAdmin);
+                    header('Location: ../member.php');
                 }else{
-                    $nama = $_POST['nama'];
-                    $id_anggota = $_SESSION['id'];
-                    $email = $_POST['email'];
-                    $username = $_POST['username'];
                     $sql="UPDATE tb_anggota set username=:username, email=:email, nama=:nama where id_anggota=:id_anggota";
                     $query= $conn->prepare($sql);
                     $dataAdmin = array(

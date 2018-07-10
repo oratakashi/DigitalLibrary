@@ -28,9 +28,15 @@
                                                         $result->execute();
                                                         foreach($result as $row){
                                                         }
+                                                        $nim = $_GET['id'];
+                                                        $sql 	= "SELECT * FROM tb_anggota where nim=$nim";
+                                                        $result = $conn->prepare($sql);
+                                                        $result->execute();
+                                                        foreach($result as $data){
+                                                        }
                                                     ?>
-                                                    <h2 class="w3_inner_tittle" style="margin-top:130px; margin-bottom:5px"><?php echo $_SESSION['nama']?></h2>
-                                                    <p>NIM : <?php echo $_SESSION['nim']?>  <?php if($_SESSION['status'] == 1){?><i class="fa fa-circle" style="color:green"></i> Online<?php } else{?><i class="fa fa-circle" ></i> Offline <?php } ?>
+                                                    <h2 class="w3_inner_tittle" style="margin-top:130px; margin-bottom:5px"><?php echo $data['nama']?></h2>
+                                                    <p>NIM : <?php echo $data['nim']?>  <?php if($data['statuslogin'] == 1){?><i class="fa fa-circle" style="color:green"></i> Online<?php } else{?><i class="fa fa-circle" ></i> Offline <?php } ?>
                                                     </p>
                                                     <a href="member.php?page=pengaturan&src=sidebar" style="float:right; margin-bottom:10px"><button class="btn btn-success"><i class="fa fa-pencil"></i> Edit Profil</button></a>
                                                 </div>
@@ -43,11 +49,11 @@
                                                             <tbody>
                                                                 <tr>
                                                                     <td style="background-color:white">Nama Lengkap</td>
-                                                                    <td style="background-color:white"><?php echo $_SESSION['nama'] ?></td>
+                                                                    <td style="background-color:white"><?php echo $data['nama'] ?></td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td style="background-color:white">NIM</td>
-                                                                    <td style="background-color:white"><?php echo $_SESSION['nim'] ?></td>
+                                                                    <td style="background-color:white"><?php echo $data['nim'] ?></td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td style="background-color:white">Tempat & Tgl Lahir</td>
@@ -55,7 +61,7 @@
                                                                 </tr>
                                                                 <tr>
                                                                     <td style="background-color:white">Email</td>
-                                                                    <td style="background-color:white"><?php echo $_SESSION['email'] ?></td>
+                                                                    <td style="background-color:white"><?php echo $data['email'] ?></td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td style="background-color:white">Alamat</td>

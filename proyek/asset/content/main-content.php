@@ -175,7 +175,7 @@
 									<div class="blank_w3ls_agile">
 										<div class="blank-page agile_info_shadow">
 											<div class="row">
-												<?php 
+											<?php 
 												require_once ("koneksi.php");
 												$connection = new ConnectionDB();
 												$conn = $connection->getConnection();
@@ -206,7 +206,7 @@
 														}else{
 															$fix = "default.jpg";
 														}
-														?>				
+											?>				
 															<div class="col-sm-6 col-md-3">
 																<div class="thumbnail">
 																	<a  href="detailbuku.php?id=<?php echo $row['kode_buku'] ?>">

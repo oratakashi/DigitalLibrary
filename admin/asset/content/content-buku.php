@@ -32,6 +32,7 @@
                         // Mendapatkan Data Tabel
                         //$sql 	= 'SELECT * FROM tb_buku';
                         // Cek apakah terdapat data page pada URL
+                        require_once 'koneksi.php';
                         $page = (isset($_GET['hals']))? $_GET['hals'] : 1;
                                 
                         $limit = 10; // Jumlah data per halamannya
@@ -69,7 +70,7 @@
                                         <?php } ?>                             
                                     </tbody>
                     </table>
-                                                    <div style="cf">
+                    <div style="cf">
 														<center><ul class="pagination">
 															<?php
 															if($page == 1){ // Jika page adalah page ke 1, maka disable link PREV
@@ -120,7 +121,7 @@
 															}
 															?>
 														</ul></center>
-												    </div>
+					</div>
                 <!-- /widget-content --> 
                 </div>
             </div>

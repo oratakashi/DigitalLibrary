@@ -60,11 +60,17 @@
                                                     <div id="foto" class="tab-pane fade in <?php $src=$_GET['src'];if($src=='profil'){echo "active";} ?>">
                                                         <form action="action/edit_foto.php" method="post" class="form-horizontal" enctype="multipart/form-data">
                                                             <div class="form-group">
-                                                                <label for="foto" class="col-sm-2 control-label">Foto Profil</label>
-                                                                <div class="col-sm-3">
-                                                                    <input type="file" name="gambar" id="" accept="image/*">
+                                                                <!--label for="foto" class="col-sm-2 control-label">Foto Profil</label-->
+                                                                <div class="col-sm-2 ">
+                                                                    <img class="col-sm-12" src="../tmp/foto/<?=$_SESSION['foto']?>" style="width:90px;height:75px">
                                                                 </div>
-                                                                <div class="col-sm-7">
+                                                                <div class="col-sm-4">
+                                                                    <!--input type="file" name="gambar" id="" class="form-control1" accept="image/*"-->
+                                                                    <label for="foto" class="">Foto Profil</label>
+                                                                    <a href="#" class="file-input"><input class="file btn-primary" name="gambar" title="<i class='fa fa-upload'></i> Unggah Foto" type="file"></a>
+                                                                    <span class="file-input-name"></span>
+                                                                </div>
+                                                                <div class="col-sm-6">
                                                                     <?php
                                                                         require_once ("koneksi.php");
                                                                         $id = $_SESSION['id'];
@@ -76,6 +82,7 @@
                                                                         $count=$result->rowCount();
                                                                         if($count == 1){
                                                                     ?>
+                                                                        <br>
                                                                         <a href="action/hapus_foto.php"><button type="button" class="btn btn-danger btn-flat"><i class="fa fa-warning" aria-hidden="true" style="margin-right:5px"></i>Hapus Foto Profil</button></a>
                                                                     <?php } ?>
                                                                 </div>
@@ -110,7 +117,7 @@
                                                             <div class="form-group">
                                                                 <label for="" class="col-sm-2 control-label">Alamat</label>
                                                                 <div class="col-sm-8">
-                                                                    <textarea name="alamat" id="" cols="30" rows="10" class="form-control" ></textarea>
+                                                                    <textarea name="alamat" id="" cols="30" rows="10" class="form-control" ><?= $row['alamat']?></textarea>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">

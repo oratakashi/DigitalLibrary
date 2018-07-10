@@ -138,4 +138,7 @@
 															?>
 														</ul></center>
 												    </div>
+    <div class="cf">
+        <a href="print.php"><button class="btn btn-primary"><i class="icon-print"></i> Cetak Laporan</button></a>
+    </div>
 </div>

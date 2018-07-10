@@ -11,6 +11,9 @@
 								<li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> Akun <i class="fa fa-angle-down" aria-hidden="true"> </i></a> 
 								     	<ul class="gn-submenu">
 										<li class="mini_list_agile"><a href="member.php?page=pengaturan&src=sidebar"><i class="fa fa-cog" aria-hidden="true" ></i> Pengaturan Akun</a></li>
+										<?php if(isset($_SESSION['level_user'])){ ?>
+										<li class="mini_list_agile"><a href="../admin/"><i class="fa fa-users" aria-hidden="true" ></i> Masuk ke Panel Admin</a></li>
+										<?php } ?>
 										<li class="mini_list_w3"><a href="logout.php"> <i class="fa  fa-chevron-circle-left" aria-hidden="true" ></i> Log Out</a></li>
 										
 									</ul>

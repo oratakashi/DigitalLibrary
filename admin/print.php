@@ -31,8 +31,8 @@
     $pdf->Cell(4,0.8,'Jumlah Download',1,0,'C'); 
     $pdf->SetFont('Arial','',10); $pdf->Ln(); 
     //Mengisi Data dari DB
-    $connection = new ConnectionDB();
-    $conn = $connection->getConnection();
+    $connection = new ConnectionDB(); //Memanggil Class yang ada di file koneksi.php
+    $conn = $connection->getConnection(); //Memanggil Fungsi yang ada di file koneksi.php
     $sql = "SELECT * FROM tb_buku b INNER JOIN tb_statistik s where b.kode_buku=s.kode_buku order by jumlah_download DESC";
     $result = $conn->prepare($sql);
     $result->execute();
